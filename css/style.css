@@ -644,21 +644,14 @@ nav {
 
 .graph-placeholder {
 
-    height: 230px;
-
+    width: 100%;
+    min-height: 0;
+    height: auto;
     margin-top: 25px;
-
-    border: 2px dashed var(--taupe);
-
+    border: 0;
     border-radius: 15px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
+    display: block;
+    overflow: hidden;
 
 }
 
@@ -1307,4 +1300,213 @@ footer {
 
     }
 
+}
+/* =====================================================
+   TERRASENSE LIVE GRAPH
+===================================================== */
+
+.live-graph-container {
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 28px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+.graph-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.graph-header h3 {
+
+    margin-top: 5px;
+
+}
+
+
+.graph-live {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.graph-live .live-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #55b96b;
+
+    box-shadow: 0 0 10px rgba(85, 185, 107, 0.7);
+
+}
+
+
+.graph-controls {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.graph-btn {
+
+    border: none;
+
+    padding: 9px 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: inherit;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+
+}
+
+
+.graph-btn:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+.graph-btn.active {
+
+    background: #c7aa70;
+
+    color: #201b16;
+
+    font-weight: 600;
+
+}
+
+
+.graph-current {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 15px;
+
+}
+
+
+.graph-current div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+#graphSensorName {
+
+    font-size: 13px;
+
+    opacity: 0.65;
+
+}
+
+
+#graphCurrentValue {
+
+    font-family: "Cinzel", serif;
+
+    font-size: 28px;
+
+}
+
+
+#graphLastUpdate {
+
+    font-size: 12px;
+
+    opacity: 0.55;
+
+}
+
+
+.chart-wrapper {
+
+    position: relative;
+    width: 100%;
+    height: 240px;
+    max-height: 240px;
+    overflow: hidden;
+
+}
+
+
+.chart-wrapper canvas {
+
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
+
+}
+
+/* LIVE GRAPH LAYOUT FIX */
+.large-panel,
+.live-graph-container {
+    min-width: 0;
+}
+
+.live-graph-container {
+    overflow: hidden;
+}
+
+.graph-controls {
+    max-width: 100%;
 }
