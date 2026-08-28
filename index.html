@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TerraSense | Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+
+    <!-- LOGO -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            🌱
+        </div>
+
+        <div>
+
+            <h1>TerraSense</h1>
+
+            <p>
+                SMART LAND MONITORING
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html"
+           class="nav-link active">
+
+            <span>▣</span>
+
+            Dashboard
+
+        </a>
+
+
+        <a href="sensors.html"
+           class="nav-link">
+
+            <span>◉</span>
+
+            Sensors
+
+        </a>
+
+
+        <a href="alerts.html"
+           class="nav-link">
+
+            <span>⚠</span>
+
+            Alerts
+
+        </a>
+
+
+        <a href="about.html"
+           class="nav-link">
+
+            <span>ⓘ</span>
+
+            About Project
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- NODE STATUS -->
+
+    <div class="sidebar-bottom">
+
+        <p>
+            NODE STATUS
+        </p>
+
+        <div class="node-status online">
+
+            <span class="status-dot"></span>
+
+            <span id="sidebarNodeStatus">
+                Node 01 Online
+            </span>
+
+        </div>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-content">
+
+
+    <!-- =================================================
+         TOP BAR
+    ================================================= -->
+
+    <header class="topbar">
+
+
+        <div>
+
+            <p class="small-title">
+                TERRASENSE MONITORING SYSTEM
+            </p>
+
+            <h2>
+                Environmental Dashboard
+            </h2>
+
+        </div>
+
+
+        <div class="top-actions">
+
+
+            <button
+                id="themeButton"
+                class="theme-btn">
+
+                ◐ Theme
+
+            </button>
+
+
+            <div class="live-status">
+
+                <span class="live-dot"></span>
+
+                LIVE DATA
+
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =================================================
+         NODE STATUS
+    ================================================= -->
+
+    <section class="node-card">
+
+
+        <div>
+
+            <p class="card-label">
+                ACTIVE MONITORING NODE
+            </p>
+
+
+            <h3 id="nodeName">
+                TerraSense Node 01
+            </h3>
+
+
+            <p class="location">
+                📍 Smart Land Monitoring Zone
+            </p>
+
+        </div>
+
+
+
+        <div class="connection-box">
+
+            <span
+                id="connectionDot"
+                class="connection-dot">
+            </span>
+
+
+            <div>
+
+                <p>
+                    Connection
+                </p>
+
+
+                <strong id="connectionStatus">
+                    ONLINE
+                </strong>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SENSOR CARDS
+    ================================================= -->
+
+    <section class="stats-grid">
+
+
+
+        <!-- =============================================
+             SOIL MOISTURE
+        ============================================== -->
+
+        <div class="stat-card">
+
+
+            <div class="card-top">
+
+
+                <span class="sensor-icon">
+                    🌱
+                </span>
+
+
+                <span
+                    id="soilStatus"
+                    class="badge normal">
+
+                    NORMAL
+
+                </span>
+
+
+            </div>
+
+
+            <p class="stat-title">
+                Soil Moisture
+            </p>
+
+
+            <h3 id="soilValue">
+                --
+            </h3>
+
+
+            <p
+                class="stat-sub"
+                id="soilCondition">
+
+                Soil condition: --
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             RAIN
+        ============================================== -->
+
+        <div class="stat-card">
+
+
+            <div class="card-top">
+
+
+                <span class="sensor-icon">
+                    🌧
+                </span>
+
+
+                <span
+                    id="rainBadge"
+                    class="badge normal">
+
+                    DRY
+
+                </span>
+
+
+            </div>
+
+
+            <p class="stat-title">
+                Rain Sensor
+            </p>
+
+
+            <h3 id="rainValue">
+                --
+            </h3>
+
+
+            <p
+                class="stat-sub"
+                id="rainRaw">
+
+                Raw value: --
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             TERRAIN TILT
+        ============================================== -->
+
+        <div class="stat-card">
+
+
+            <div class="card-top">
+
+
+                <span class="sensor-icon">
+                    ◈
+                </span>
+
+
+                <span
+                    id="tiltStatus"
+                    class="badge normal">
+
+                    SAFE
+
+                </span>
+
+
+            </div>
+
+
+            <p class="stat-title">
+                Terrain Tilt
+            </p>
+
+
+            <h3 id="tiltValue">
+                --°
+            </h3>
+
+
+            <p class="stat-sub">
+                MPU6050 Monitoring
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             LOAD CELL
+        ============================================== -->
+
+        <div class="stat-card">
+
+
+            <div class="card-top">
+
+
+                <span class="sensor-icon">
+                    ⚖
+                </span>
+
+
+                <span class="badge normal">
+                    LIVE
+                </span>
+
+
+            </div>
+
+
+            <p class="stat-title">
+                Load Cell
+            </p>
+
+
+            <h3 id="loadCellValue">
+                --
+            </h3>
+
+
+            <p class="stat-sub">
+                HX711 Raw Value
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             TEMPERATURE
+        ============================================== -->
+
+        <div class="stat-card">
+
+
+            <div class="card-top">
+
+
+                <span class="sensor-icon">
+                    🌡
+                </span>
+
+
+                <span class="badge normal">
+                    LIVE
+                </span>
+
+
+            </div>
+
+
+            <p class="stat-title">
+                Temperature
+            </p>
+
+
+            <h3 id="temperatureValue">
+                --°C
+            </h3>
+
+
+            <p class="stat-sub">
+                Node temperature
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             OVERALL STATUS
+        ============================================== -->
+
+        <div class="stat-card">
+
+
+            <div class="card-top">
+
+
+                <span class="sensor-icon">
+                    ⚠
+                </span>
+
+
+                <span
+                    id="overallStatusBadge"
+                    class="badge normal">
+
+                    SAFE
+
+                </span>
+
+
+            </div>
+
+
+            <p class="stat-title">
+                System Status
+            </p>
+
+
+            <h3 id="overallStatus">
+                SAFE
+            </h3>
+
+
+            <p class="stat-sub">
+                Based on terrain condition
+            </p>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         SYSTEM INFORMATION
+    ================================================= -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- =============================================
+             NODE INFORMATION
+        ============================================== -->
+
+        <div class="panel large-panel">
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <p class="card-label">
+                        SYSTEM INFORMATION
+                    </p>
+
+
+                    <h3>
+                        Node Performance
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="overview-grid">
+
+
+                <!-- NODE ID -->
+
+                <div class="overview-item">
+
+                    <span>
+                        Node ID
+                    </span>
+
+                    <strong id="nodeId">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <!-- RSSI -->
+
+                <div class="overview-item">
+
+                    <span>
+                        LoRa RSSI
+                    </span>
+
+                    <strong id="rssiValue">
+                        -- dBm
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SNR -->
+
+                <div class="overview-item">
+
+                    <span>
+                        LoRa SNR
+                    </span>
+
+                    <strong id="snrValue">
+                        -- dB
+                    </strong>
+
+                </div>
+
+
+
+                <!-- LAST UPDATE -->
+
+                <div class="overview-item">
+
+                    <span>
+                        Last Update
+                    </span>
+
+                    <strong id="lastUpdate">
+                        --
+                    </strong>
+
+                </div>
+
+
+
+                <!-- DATA STATUS -->
+
+                <div class="overview-item">
+
+                    <span>
+                        Data Status
+                    </span>
+
+                    <strong id="dataStatus">
+                        RECEIVING
+                    </strong>
+
+                </div>
+
+
+
+                <!-- SOIL STATUS -->
+
+                <div class="overview-item">
+
+                    <span>
+                        Soil Condition
+                    </span>
+
+                    <strong id="soilConditionOverview">
+                        --
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- LIVE STATUS AREA -->
+
+            <div class="graph-placeholder">
+
+
+                <div>
+
+                    <span class="graph-icon">
+                        📡
+                    </span>
+
+
+                    <h3>
+                        TerraSense Live Monitoring
+                    </h3>
+
+
+                    <p id="liveMessage">
+                        Waiting for sensor data...
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =============================================
+             STATUS PANEL
+        ============================================== -->
+
+        <div class="panel energy-panel">
+
+
+            <p class="card-label">
+                TERRAIN CONDITION
+            </p>
+
+
+            <h3>
+                Current Status
+            </h3>
+
+
+
+            <div
+                id="statusPanel"
+                style="margin-top: 30px; text-align: center;">
+
+
+                <div
+                    id="statusIcon"
+                    style="font-size: 55px;">
+
+                    ✓
+
+                </div>
+
+
+                <h2
+                    id="statusPanelText"
+                    style="margin-top: 15px;">
+
+                    SAFE
+
+                </h2>
+
+
+                <p
+                    id="statusDescription">
+
+                    Terrain condition is normal.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================= -->
+
+    <footer>
+
+
+        <p>
+            TerraSense • Smart Environmental Monitoring System
+        </p>
+
+
+        <p id="clock"></p>
+
+
+    </footer>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/main.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+<script
+    type="module"
+    src="./script.js">
+</script>
+
+
+</body>
+
+</html>
